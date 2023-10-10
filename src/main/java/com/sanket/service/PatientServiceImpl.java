@@ -75,8 +75,6 @@ public class PatientServiceImpl implements PatientService, Runnable {
 		this.emailBody = emailBody;
 	
 	}
-	
-
 	@Override
 	public Patient createPatient(Patient patient) throws PatientException {
 		Patient databaseUser = userDao.findByMobileNo(patient.getMobileNo());

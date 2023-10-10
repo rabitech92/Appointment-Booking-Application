@@ -92,7 +92,6 @@ public class AdminController {
 			if(!currentUserSession.getUserType().equals("admin")) {
 				throw new LoginException("Please login as admin");
 			}
-			
 				List<Doctor> listOfValidInValidDoctors = adminDoctorService.getAllValidInValidDoctors(key);
 				return new ResponseEntity<List<Doctor>>(listOfValidInValidDoctors, HttpStatus.CREATED);
 		}else {

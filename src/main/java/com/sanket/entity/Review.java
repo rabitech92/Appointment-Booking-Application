@@ -36,9 +36,7 @@ public class Review {
 	
 	@OneToOne
 	private Appointment appointment;
-	
 	private String reviewContent;
-	
 	private float rating;
 
 	@Override

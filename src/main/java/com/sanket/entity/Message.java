@@ -26,11 +26,8 @@ public class Message {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer messageId;
-	
 	private String messageContent;
-	
 	private Integer sender;
-	
 	private Integer receiver;
 	
 	@ManyToOne
@@ -38,7 +35,6 @@ public class Message {
 	
 	@ManyToOne
 	private Doctor doctor;
-	
 	private LocalDateTime messageTimeAndDate;
 	
 }
