@@ -15,7 +15,5 @@ public class LoginUUIDKey {
 	
 	private String msg;
 	private String uuid;
-	
-	
 
 }
