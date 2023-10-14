@@ -8,7 +8,7 @@
 		<version>3.1.2</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.sanket</groupId>
+	<groupId>com.appoint</groupId>
 	<artifactId>Appointment-Booking-Application</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Appointment-Booking-Application</name>
