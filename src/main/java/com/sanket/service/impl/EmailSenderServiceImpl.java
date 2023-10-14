@@ -1,5 +1,6 @@
-package com.sanket.service;
+package com.sanket.service.impl;
 
+import com.sanket.service.EmailSenderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
@@ -10,7 +11,7 @@ import com.sanket.entity.EmailBody;
 import jakarta.mail.MessagingException;
 
 @Service
-public class EmailSenderServiceImpl implements EmailSenderService{
+public class EmailSenderServiceImpl implements EmailSenderService {
 	
 	@Autowired
 	private JavaMailSender javaMailSender; 

@@ -1,4 +1,4 @@
-package com.sanket.service;
+package com.sanket.service.impl;
 
 import java.io.IOException;
 import java.security.SecureRandom;
@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
+import com.sanket.service.DoctorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -28,7 +29,7 @@ import com.sanket.repository.PatientDao;
 import com.sanket.repository.SessionDao;
 
 @Service
-public class DoctorServiceImpl implements DoctorService{
+public class DoctorServiceImpl implements DoctorService {
 	
 	@Autowired
 	DoctorDao doctorDao;

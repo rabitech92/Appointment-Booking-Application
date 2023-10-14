@@ -1,9 +1,10 @@
-package com.sanket.service;
+package com.sanket.service.impl;
 
 import java.time.LocalDateTime;
 import java.util.Optional;
 import java.util.Random;
 
+import com.sanket.service.PatientAndAdminLoginService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -77,6 +78,7 @@ public class PatientAndAdminLoginServiceImpl implements PatientAndAdminLoginServ
 			throw new LoginException("Please enter valid password");
 		}
 	}
+
 	@Override
 	public String logoutFromAccount(String key) throws LoginException {
 		CurrentSession currentPatientOptional = sessionDao.findByUuid(key);

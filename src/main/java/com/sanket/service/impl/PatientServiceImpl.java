@@ -1,4 +1,4 @@
-package com.sanket.service;
+package com.sanket.service.impl;
 
 import java.io.FileReader;
 import java.io.IOException;
@@ -13,10 +13,11 @@ import java.util.Optional;
 import java.util.Properties;
 import java.util.stream.Collectors;
 
+import com.sanket.service.EmailSenderService;
+import com.sanket.service.PatientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.CrossOrigin;
 
 import com.sanket.entity.Appointment;
 import com.sanket.entity.CurrentSession;

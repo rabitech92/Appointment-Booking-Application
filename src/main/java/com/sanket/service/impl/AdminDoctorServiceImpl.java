@@ -1,18 +1,14 @@
-package com.sanket.service;
+package com.sanket.service.impl;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
+import com.sanket.service.AdminDoctorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.sanket.entity.Appointment;
-import com.sanket.entity.CurrentSession;
 import com.sanket.entity.Doctor;
-import com.sanket.entity.Patient;
 import com.sanket.exception.DoctorException;
-import com.sanket.exception.PatientException;
 import com.sanket.repository.AppointmentDao;
 import com.sanket.repository.DoctorDao;
 
