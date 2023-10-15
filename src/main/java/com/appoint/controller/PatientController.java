@@ -50,13 +50,13 @@ public class PatientController {
 	
 	
 	@CrossOrigin
-	@PostMapping("/registerPatient")
+	@PostMapping("/registerPatient")//ok
 	public ResponseEntity<Patient> saveCustomer(@Valid @RequestBody Patient patient) throws PatientException{
 		Patient savedUser= patientService.createPatient(patient);
 		return new ResponseEntity<Patient>(savedUser, HttpStatus.CREATED);
 	}
 	
-	@PutMapping("/updatePatient")
+	@PutMapping("/updatePatient")//ok
 	public ResponseEntity<Patient> updateCustomer(@RequestBody Patient patient, @RequestParam(required = false) String key) throws PatientException{
 		Patient updateduser = patientService.updatePatient(patient, key);
 		return new ResponseEntity<Patient>(updateduser,HttpStatus.OK);

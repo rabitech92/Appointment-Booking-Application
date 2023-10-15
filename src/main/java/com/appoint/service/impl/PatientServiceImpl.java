@@ -76,7 +76,7 @@ public class PatientServiceImpl implements PatientService, Runnable {
 		this.emailBody = emailBody;
 	
 	}
-	@Override
+	@Override//ok
 	public Patient createPatient(Patient patient) throws PatientException {
 		Patient databaseUser = userDao.findByMobileNo(patient.getMobileNo());
 		if(databaseUser == null) {
@@ -91,7 +91,7 @@ public class PatientServiceImpl implements PatientService, Runnable {
 		}
 	}
 
-	@Override
+	@Override//ok
 	public Patient updatePatient(Patient user, String key) throws PatientException {
 		CurrentSession loggedInUser = sessionDao.findByUuid(key);
 		if(loggedInUser == null) {
@@ -104,7 +104,7 @@ public class PatientServiceImpl implements PatientService, Runnable {
 		}
 	}
 
-	@Override
+	@Override//ok
 	public Patient getPatientByUuid(String uuid) throws PatientException {
 		CurrentSession currentPatient = sessionDao.findByUuid(uuid);
 		Optional<Patient> patient = userDao.findById(currentPatient.getUserId());
@@ -115,7 +115,7 @@ public class PatientServiceImpl implements PatientService, Runnable {
 		}
 	}
 
-	@Override
+	@Override//ok
 	public CurrentSession getCurrentUserByUuid(String uuid) throws LoginException {
 		CurrentSession currentUserSession = sessionDao.findByUuid(uuid);
 		if(currentUserSession != null) {
@@ -127,7 +127,7 @@ public class PatientServiceImpl implements PatientService, Runnable {
 	
 	// we are refreshing the appointment dates when client is fetching the appointment or client clicking on refresh button
 	// from and to will be 24 hours time
-	
+	//ok
 	public static void getAppointmentDates(Integer from, Integer to) throws IOException, TimeDateException{
 		// empty the myTimeDate firstly before putting the new values
 		myTimeDate.clear();
