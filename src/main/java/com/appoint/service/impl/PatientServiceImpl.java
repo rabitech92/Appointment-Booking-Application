@@ -46,9 +46,8 @@ import com.appoint.repository.ReviewDao;
 public class PatientServiceImpl implements PatientService, Runnable {
 	
 	public static Map<String, LocalDateTime> myTimeDate = new LinkedHashMap<>();
-	
 	public static BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder(10, new SecureRandom());
-	
+
 	@Autowired
 	PatientDao userDao;
 	@Autowired
@@ -70,7 +69,7 @@ public class PatientServiceImpl implements PatientService, Runnable {
 	
 	
 	public PatientServiceImpl(Appointment appointment, EmailSenderService emailSenderService, EmailBody emailBody) {
-		
+
 		this.savedAppointment = appointment;
 		this.emailSenderService = emailSenderService;
 		this.emailBody = emailBody;
@@ -154,13 +153,9 @@ public class PatientServiceImpl implements PatientService, Runnable {
 	    	// 2023-03-09 01:00
 	    	if(currentDateTime.isBefore(dateTime)) {
 	    		myTimeDate.put("today"+i, dateTime);
-	    		
 	    	}
-	    	
 	    }
-	    
 	    // puting tomorrow dates
-	    
 	    for(int i= from; i <= to; i++) {
 	    	String tomorrowTimeString = null;
 	    	if(!( i >= 10)) {
@@ -233,18 +228,12 @@ public class PatientServiceImpl implements PatientService, Runnable {
 					}else {
 						
 						throw new AppointmentException("This time or date already booked or please enter valid appointment time and date " + appointment.getAppointmentDateAndTime());
-
 					}
-					
-					
 					// we can't map appointment object directly because we don't have appointment id in it we have to mapped after saving the 
 					// appointment and then we will get the appointment id then it will not generate appointment again. If we mapped the register
 					// appointment.
 					
 					// mapping appointment in doctor and then saving doctor
-					
-					
-					
 					registerDoctors.get().getListOfAppointments().add(registerAppointment);
 					doctorDao.save(registerDoctors.get());
 					// mapping appointment in patient then saving patient
@@ -536,9 +525,6 @@ public class PatientServiceImpl implements PatientService, Runnable {
 		}else {
 			throw new ReviewException("No reivew found with this id " + review.getReviewId());
 		}
-		
-		
-		
 	}
 
 	@Override
