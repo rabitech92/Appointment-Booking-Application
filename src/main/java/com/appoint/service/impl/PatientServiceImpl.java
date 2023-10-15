@@ -76,7 +76,7 @@ public class PatientServiceImpl implements PatientService, Runnable {
 		this.emailBody = emailBody;
 	
 	}
-	@Override//ok
+	@Override//ok 15.10.2023
 	public Patient createPatient(Patient patient) throws PatientException {
 		Patient databaseUser = userDao.findByMobileNo(patient.getMobileNo());
 		if(databaseUser == null) {
@@ -91,7 +91,7 @@ public class PatientServiceImpl implements PatientService, Runnable {
 		}
 	}
 
-	@Override//ok
+	@Override//ok 15.10.2023
 	public Patient updatePatient(Patient user, String key) throws PatientException {
 		CurrentSession loggedInUser = sessionDao.findByUuid(key);
 		if(loggedInUser == null) {
@@ -115,7 +115,7 @@ public class PatientServiceImpl implements PatientService, Runnable {
 		}
 	}
 
-	@Override//ok
+	@Override//ok 15.10.2023
 	public CurrentSession getCurrentUserByUuid(String uuid) throws LoginException {
 		CurrentSession currentUserSession = sessionDao.findByUuid(uuid);
 		if(currentUserSession != null) {
@@ -127,7 +127,7 @@ public class PatientServiceImpl implements PatientService, Runnable {
 	
 	// we are refreshing the appointment dates when client is fetching the appointment or client clicking on refresh button
 	// from and to will be 24 hours time
-	//ok
+	//ok 15.10.2023
 	public static void getAppointmentDates(Integer from, Integer to) throws IOException, TimeDateException{
 		// empty the myTimeDate firstly before putting the new values
 		myTimeDate.clear();
@@ -176,7 +176,7 @@ public class PatientServiceImpl implements PatientService, Runnable {
 	    }
 	}
 
-	@Override
+	@Override//ok 15.10.2023
 	public Appointment bookAppointment(String key, Appointment appointment) throws AppointmentException, LoginException, DoctorException, IOException, TimeDateException, MessagingException {
 		CurrentSession currentPatientSession = sessionDao.findByUuid(key);
 		Optional<Patient> patient = patientDao.findById(currentPatientSession.getUserId());
@@ -263,7 +263,7 @@ public class PatientServiceImpl implements PatientService, Runnable {
 		
 	}
 
-	@Override
+	@Override//ok 15.10.2023
 	public List<Appointment> getAllAppointmenPatientWise(String key) throws AppointmentException, PatientException {
 		CurrentSession currentPatientSession = sessionDao.findByUuid(key);
 		Optional<Patient> patient = patientDao.findById(currentPatientSession.getUserId());
@@ -279,7 +279,7 @@ public class PatientServiceImpl implements PatientService, Runnable {
 		}
 	}
 	
-	@Override 
+	@Override //ok 15.10.2023
 	public Appointment updateAppointment(String key, Appointment newAppointment) throws AppointmentException, PatientException, DoctorException, IOException, TimeDateException {
 		CurrentSession currentPatientSession = sessionDao.findByUuid(key);
 		Optional<Patient> patient = patientDao.findById(currentPatientSession.getUserId());
@@ -343,7 +343,7 @@ public class PatientServiceImpl implements PatientService, Runnable {
 		}
 	}
 
-	@Override
+	@Override//ok 15.10.2023
 	public List<Doctor> getAllDoctors() throws DoctorException {
 		List<Doctor> listOfDoctors = doctorDao.findAll();
 		if(!listOfDoctors.isEmpty()) {
