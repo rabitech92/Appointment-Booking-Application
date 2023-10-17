@@ -14,22 +14,16 @@ import jakarta.mail.MessagingException;
 public class EmailSenderServiceImpl implements EmailSenderService {
 	
 	@Autowired
-	private JavaMailSender javaMailSender; 
+	private static JavaMailSender javaMailSender;
 
 	@Override
 	public Boolean sendAppointmentBookingMail(String toEmail, EmailBody emailBody) throws MessagingException {
-		
 		SimpleMailMessage simpleMailMessage = new SimpleMailMessage();
-		
-		simpleMailMessage.setFrom("sanket98wankhede@gmail.com");
-		
+		simpleMailMessage.setFrom("rabiulnewsinfo@gmail.com");
 		simpleMailMessage.setTo(toEmail);
 		simpleMailMessage.setText(emailBody.getEmailBody());
 		simpleMailMessage.setSubject(emailBody.getEmailSubject());
-		
 		javaMailSender.send(simpleMailMessage);
-		
-		
 		return true;
 	
 	}
