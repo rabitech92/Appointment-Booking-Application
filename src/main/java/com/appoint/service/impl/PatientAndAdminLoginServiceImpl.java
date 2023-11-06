@@ -55,7 +55,7 @@ public class PatientAndAdminLoginServiceImpl implements PatientAndAdminLoginServ
 		if(PatientServiceImpl.bCryptPasswordEncoder.matches(loginDTO.getPassword(), existingPatient.getPassword())) {
 			String key = generateRandomString();
 			CurrentSession currentPatientSession = new CurrentSession(existingPatient.getPatientId(), key, LocalDateTime.now());
-			if(PatientServiceImpl.bCryptPasswordEncoder.matches("admin", existingPatient.getPassword()) && existingPatient.getMobileNo().equals("1234567890")) {
+			if(PatientServiceImpl.bCryptPasswordEncoder.matches("admin", existingPatient.getPassword()) && existingPatient.getMobileNo().equals("123456789")) {
 				existingPatient.setType("admin");
 				currentPatientSession.setUserType("admin");
 				currentPatientSession.setUserId(existingPatient.getPatientId());

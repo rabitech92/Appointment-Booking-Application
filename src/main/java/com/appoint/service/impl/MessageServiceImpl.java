@@ -24,16 +24,13 @@ import com.appoint.repository.SessionDao;
 public class MessageServiceImpl implements MessageService {
 	
 	@Autowired
-	SessionDao sessionDao;
-	
+	private SessionDao sessionDao;
 	@Autowired
-	PatientDao patientDao;
-	
+	private PatientDao patientDao;
 	@Autowired
-	DoctorDao doctorDao;
-	
+	private DoctorDao doctorDao;
 	@Autowired
-	MessageDao messageDao;
+	private MessageDao messageDao;
 
 	@Override
 	public Message sendMessageFromPatientToDoctor(String key, Message message) throws PatientException, DoctorException {

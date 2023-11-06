@@ -14,7 +14,7 @@ public class SpringdocConfig {
 	@Bean
 	public OpenAPI baseOpenAPI() {
 		
-		return new OpenAPI().info(new Info().title("Spring Doc").version("3.0.0").description("Spring doc"));
+		return new OpenAPI().info(new Info().title("Spring Doc").version("3.1.2").description("Spring doc"));
 		
 	}
 
